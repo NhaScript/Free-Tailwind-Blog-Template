@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <title>nhascript.com blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              fontFamily:{
+                'dm_san' : ["DM Sans", "sans-serif"]
+              } 
+            }
+          }
+        }
+      </script>
+  </head>
+  <body>
+    <main class="font-dm_san text-md">
+          <!-- start header -->
+          <header class="px-4 lg:px-40 mx-auto flex justify-between items-center h-[70px] border-b border-gray-200">
+                    <button id="btnToggleSmallNavbar" type="button" class="inline-block lg:hidden rounded-md p-2 focus:bg-gray-100 hover:bg-gray-100 focus:ring-2 focus:ring-indigo-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+                            <path fill-rule="evenodd" d="M2 4.75A.75.75 0 0 1 2.75 4h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 4.75Zm0 10.5a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5a.75.75 0 0 1-.75-.75ZM2 10a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 10Z" clip-rule="evenodd" />
+                          </svg>
+                          
+                    </button>
+                    <h3 class="text-2xl font-bold">NHA-SCRIPT</h3>
+                    <ul class="hidden lg:flex items-center gap-8 text-lg">
+                        <li>
+                            <a class="font-medium hover:text-slate-700 transition-all" href="/index.html">Home</a>
+                        </li>
+                        <li>
+                            <a class="font-medium hover:text-slate-700 transition-all" href="/category.html">Category</a>
+                        </li>
+                        <li>
+                            <a class="font-medium hover:text-slate-700 transition-all" href="/single.html">Single Post</a>
+                        </li>
+                    </ul>
+
+                    <ul id="small-navbar" class="absolute z-[999] -left-full transition-all duration-300 top-0 min-h-screen h-full flex flex-col gap-4 text-lg bg-slate-900 text-white w-[260px] p-4">
+                        <div class="relative">
+                            <button id="btnCloseSmallNavbar" class="absolute top-2 right-4 w-8 h-8 border flex items-center justify-center  rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+                                    <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                                  </svg>     
+                            </button>
+
+                        </div>
+                        <li class="mt-8">
+                            <a class="font-medium hover:text-slate-700 transition-all" href="/index.html">Home</a>
+                        </li>
+                        <li>
+                            <a class="font-medium hover:text-slate-700 transition-all" href="/category.html">Category</a>
+                        </li>
+                        <li>
+                            <a class="font-medium hover:text-slate-700 transition-all" href="/single.html">Single Post</a>
+                        </li>
+                    </ul>
+
+                    <ul class="flex items-center gap-4">
+                        <li>
+                            <button type="button" class="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+                                    <path fill-rule="evenodd" d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z" clip-rule="evenodd" />
+                                  </svg>                                  
+                            </button>
+
+                        </li>
+                        <li>
+                            <!-- <button type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-6">
+                                    <path d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z" />
+                                  </svg>                                  
+                            </button> -->
+                            <button type="button" class="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+                                    <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd" />
+                                  </svg>
+                                  
+                            </button>
+
+                        </li>
+                    </ul>
+          </header>
+          <!-- end header -->
+
+          <section class="max-w-[90%] lg:max-w-[900px]  mx-auto mt-14">
+                <div class="overflow-hidden rounded-md space-y-4 group">
+                        <figure class="h-[400px] overflow-hidden relative">
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-all" src="https://images.pexels.com/photos/4240505/pexels-photo-4240505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+                                <button type="button" class="absolute top-8 left-8 bg-red-500 text-white px-2 text-xs font-semibold py-1 rounded-full">Life style</button>
+                        </figure>
+                        <h1 class="text-4xl lg:text-6xl font-bold">Of acceptance insipidity remarkably is invitation</h1>
+                        <p class="text-xl text-gray-600 line-clamp-2">Together happy feelings continue juvenile had off one. Unknown may service subject her letters one bed. Down has rose feel find man. Learning day desirous informed expenses material returned six…</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+                    <div class="overflow-hidden rounded-md space-y-2 group">
+                        <figure class="h-[200px] overflow-hidden relative">
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-all" src="https://images.pexels.com/photos/4240505/pexels-photo-4240505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+                                <button type="button" class="absolute top-8 left-8 bg-red-500 text-white px-2 text-xs font-semibold py-1 rounded-full">Life style</button>
+                        </figure>
+                        <h1 class="text-2xl font-bold">Of acceptance insipidity remarkably is invitation</h1>
+                        <p class="text-lg text-gray-600 line-clamp-2">Together happy feelings continue juvenile had off one. Unknown may service subject her letters one bed. Down has rose feel find man. Learning day desirous informed expenses material returned six…</p>
+                    </div>
+                    <div class="overflow-hidden rounded-md space-y-2 group">
+                        <figure class="h-[200px] overflow-hidden relative">
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-all" src="https://images.pexels.com/photos/4240505/pexels-photo-4240505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+                                <button type="button" class="absolute top-8 left-8 bg-red-500 text-white px-2 text-xs font-semibold py-1 rounded-full">Life style</button>
+                        </figure>
+                        <h1 class="text-2xl font-bold">Of acceptance insipidity remarkably is invitation</h1>
+                        <p class="text-lg text-gray-600 line-clamp-2">Together happy feelings continue juvenile had off one. Unknown may service subject her letters one bed. Down has rose feel find man. Learning day desirous informed expenses material returned six…</p>
+                    </div>
+                    <div class="overflow-hidden rounded-md space-y-2 group">
+                        <figure class="h-[200px] overflow-hidden relative">
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-all" src="https://images.pexels.com/photos/4240505/pexels-photo-4240505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+                                <button type="button" class="absolute top-8 left-8 bg-red-500 text-white px-2 text-xs font-semibold py-1 rounded-full">Life style</button>
+                        </figure>
+                        <h1 class="text-2xl font-bold">Of acceptance insipidity remarkably is invitation</h1>
+                        <p class="text-lg text-gray-600 line-clamp-2">Together happy feelings continue juvenile had off one. Unknown may service subject her letters one bed. Down has rose feel find man. Learning day desirous informed expenses material returned six…</p>
+                    </div>
+                    <div class="overflow-hidden rounded-md space-y-2 group">
+                        <figure class="h-[200px] overflow-hidden relative">
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-all" src="https://images.pexels.com/photos/4240505/pexels-photo-4240505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+                                <button type="button" class="absolute top-8 left-8 bg-red-500 text-white px-2 text-xs font-semibold py-1 rounded-full">Life style</button>
+                        </figure>
+                        <h1 class="text-2xl font-bold">Of acceptance insipidity remarkably is invitation</h1>
+                        <p class="text-lg text-gray-600 line-clamp-2">Together happy feelings continue juvenile had off one. Unknown may service subject her letters one bed. Down has rose feel find man. Learning day desirous informed expenses material returned six…</p>
+                    </div>
+                    <div class="overflow-hidden rounded-md space-y-2 group">
+                        <figure class="h-[200px] overflow-hidden relative">
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-all" src="https://images.pexels.com/photos/4240505/pexels-photo-4240505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+                                <button type="button" class="absolute top-8 left-8 bg-red-500 text-white px-2 text-xs font-semibold py-1 rounded-full">Life style</button>
+                        </figure>
+                        <h1 class="text-2xl font-bold">Of acceptance insipidity remarkably is invitation</h1>
+                        <p class="text-lg text-gray-600 line-clamp-2">Together happy feelings continue juvenile had off one. Unknown may service subject her letters one bed. Down has rose feel find man. Learning day desirous informed expenses material returned six…</p>
+                    </div>
+                    <div class="overflow-hidden rounded-md space-y-2 group">
+                        <figure class="h-[200px] overflow-hidden relative">
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-all" src="https://images.pexels.com/photos/4240505/pexels-photo-4240505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+                                <button type="button" class="absolute top-8 left-8 bg-red-500 text-white px-2 text-xs font-semibold py-1 rounded-full">Life style</button>
+                        </figure>
+                        <h1 class="text-2xl font-bold">Of acceptance insipidity remarkably is invitation</h1>
+                        <p class="text-lg text-gray-600 line-clamp-2">Together happy feelings continue juvenile had off one. Unknown may service subject her letters one bed. Down has rose feel find man. Learning day desirous informed expenses material returned six…</p>
+                    </div>
+                </div>
+
+                <div class="my-8 flex justify-center items-center gap-2">
+                    <button type="button" class="text-lg w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">1</button>
+                    <button type="button" class="text-lg w-10 h-10 rounded-full flex items-center justify-center">2</button>
+                    <button type="button" class="text-lg w-10 h-10 rounded-full flex items-center justify-center">3</button>
+                    <button type="button" class="text-lg rounded-full bg-blue-600 text-white px-4 py-1"> Older Posts </button>
+                </div>
+          </section>
+
+          <section class="bg-gray-50 px-40 py-8">
+                <footer class=" mx-auto py-4 flex items-center justify-between ">
+                        <p>Copyright by  <a href="http:/nhascript.com" class="underline">nhascript.com</a> </p>
+                        <ul class="flex items-center gap-4">
+                            <li class="font-medium hover:underline cursor-pointer">About Us</li>
+                            <li class="font-medium hover:underline cursor-pointer">Contact Us</li>
+                            <li class="font-medium hover:underline cursor-pointer">Policy</li>
+                            <li class="font-medium hover:underline cursor-pointer">Term and Conditionals</li>
+                        </ul>
+                </footer>
+          </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
